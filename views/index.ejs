@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cocktail Recipe</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="drink-name"><%= recipe.strDrink %></h1>
+    </header>
+    <main>
+      <div class="image-container">
+        <img src= <%= recipe.strDrinkThumb %> width='200px' alt="Cocktail Image" class="recipe-image">
+      </div>
+      <div class="details">
+        <p><strong>Category:</strong> <span id="category"><%= recipe.strCategory %></span></p>
+        <p><strong>Type:</strong> <span id="type"><%= recipe.strAlcoholic %></span></p>
+        <p><strong>Glass:</strong> <span id="glass"><%= recipe.strGlass %></span></p>
+        <ul class="ingredients">
+          <strong>Ingredients:</strong>
+          <% for(let i=0; i<ingredient.length; i++){ %>
+            <li><%= ingredient[i] %></li>
+        <% } %>
+        </ul>
+        <p class="description">
+          <strong>Description:</strong> Follow these steps to create the perfect cocktail...<br>
+          <%= recipe.strInstructions %>
+        </p>
+      </div>
+    </main>
+    <h2>Refresh the page to get different Cocktail Recipe.</h2>
+  </div>
+  <footer>
+    <!-- Step 4 - Add a dynamic year to the footer using JS. -->
+    <p>Copyright © <%= year %> </p>
+  </footer>
+</body>
+</html>
